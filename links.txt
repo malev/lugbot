@@ -1,0 +1,9 @@
+http://github.com/ichverstehe/isaac/tree/master
+http://github.com/jamiew/fatbot/tree/master
+
+http://github.com/RISCfuture/autumn/tree/master
+http://code.google.com/p/autumn-leaves/wiki/YourFirstBot
+http://www.datamapper.org/doku.php?id=getting_started_with_datamapper
+http://www.datamapper.org/doku.php?id=getting_started_with_datamapper
+http://hierclust.rubyforge.org/
+http://api.rubyonrails.org/classes/ActiveRecord/Base.html
