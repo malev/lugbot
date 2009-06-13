@@ -16,8 +16,6 @@ class Message
   property  :id,            Serial         
   property  :body,          Text
   property  :created_at,    DateTime
-# Associations
-  belongs_to :user
 end
 
 class User
@@ -35,8 +33,6 @@ class User
   validates_format :email, :format => :email_address, :messages => {
                                     :presence => "Falta el correo",
                                     :format => "Debe ser un correo"}
-# Associations
-  has n, :messages
 end
 
 DataMapper.auto_upgrade!
