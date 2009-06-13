@@ -16,7 +16,7 @@ helpers do
 end
 
 on :connect do
-  join "#twittirc", "#awesome_channel"
+  join "lugtucuman"
   msg 'asdfhaskfdhaskdfhaskdfasdf', 'foo'
 end
 

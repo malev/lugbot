@@ -13,24 +13,26 @@ DataObjects::Sqlite3.logger = DataObjects::Logger.new(STDOUT, 0)
 
 class Message
   include DataMapper::Resource
-  property  :id,            Serial         
-  property  :body,          Text
+  property  :id,            Serial  
+  property  :nick,          String       
+  property  :msg,           String, :length => 256
   property  :created_at,    DateTime
 end
 
 class User
+#  include BCrypt
   include DataMapper::Resource
+
   property  :id,            Serial
   property  :username,      String
   property  :email,         String
-  property  :pass_hashed,   String
-  property  :pass_salt,     String
+  property  :password,      String, :length => 128
   property  :type,          Integer, :default => 0
 # Validations
   validates_present :username, :message => "Debe ingresar un nombre de usuario."
-  validates_present :pass_hashed, :message => "Debe ingresar una contraseña."
+  validates_present :password, :message => "Debe ingresar una contraseña."
   validates_is_unique :username, :message => "Lo siento, ya hay un usuario con ese nombre."
-  
+
 end
 
 DataMapper.auto_upgrade!
