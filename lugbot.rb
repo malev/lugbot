@@ -3,9 +3,9 @@ require 'rubygems'
 require 'parseconfig'
 require 'mvc/datos.rb'
 require 'mvc/controllers.rb'
+require 'logger'
 
-verif = []
-
+$LOG = Logger.new('log/log_file.log', 'monthly') 
 myconfig = ParseConfig.new('config/irc.conf')
 
 configure do |c|
@@ -16,20 +16,29 @@ configure do |c|
 end
 
 on :connect do
-  join "#ruby-lang"
+  join "#lugtucuman"
+end
+
+on :private, /^exportar (\S+)/ do
+  modo = match[0]
+  if (auth && auth.expirado?)
+    export_file
+    msg nick, "You export file has been generated."
+  else
+    auth = nil
+    msg nick, "You must loggin first!"
+  end
 end
 
 on :private, /^login (\S+) (\S+)/ do
   username = match[0]
   password = match[1]
-  # do something to authorize or whatevz.
-  msg nick, "Login successful!" if (username == "malev" && password == "genius")
-  msg nick, "Esperando..."
-
+  auth = Sessions.new(username, password, nick)
+  msg nick, "Login successful!" if @auth
 end
 
 on :channel, // do
-  createm :msg => msg, :nick => nick
+  createm(:nick => nick, :msg => message)
 end
 
 #on :private /^record/ do

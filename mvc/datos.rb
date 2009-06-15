@@ -1,9 +1,15 @@
 require 'rubygems'
 require 'dm-core' # instead of 'datamapper'
 require 'dm-validations'
+require 'ftools'
 
 # A Sqlite3 connection to a database file:
-DataMapper.setup(:default, "sqlite3:///#{Dir.pwd}/test.db")
+#if File.exist?("#{Dir.pwd}/db/test.db")
+#  DataMapper.setup(:default, "sqlite3:///#{Dir.pwd}/db/test.db") 
+#else
+  DataMapper.setup(:default, "sqlite3:///#{Dir.pwd}/../db/test.db") # para debug
+#end
+
 DataObjects::Sqlite3.logger = DataObjects::Logger.new("log/dm.log", 0)
 DataObjects::Sqlite3.logger = DataObjects::Logger.new(STDOUT, 0)
 
@@ -36,3 +42,4 @@ class User
 end
 
 DataMapper.auto_upgrade!
+
