@@ -1,0 +1,31 @@
+= LugBot
+Bot IRC para el canal de IRC del lug Tucumán: http://lugtucuman.org.ar
+Grupo de usuarios de Software Libre de Tucumán - Argentina
+
+== Instalación
+git clone git@github.com:malev/lugbot.git
+
+===Gemas para funcionar:
+sudo gem install daemons parseconfig logger bcrypt dm-core dm-validations ftools datamapper
+
+== Funcionamiento
+ruby lugbot.rb start
+ruby lugbot.rb stop
+ruby lugbot.rb restart
+
+y en el caso de necesitar un debug
+ruby lugbot.rb run
+
+== Exportar conversaciones
+mandale un privado con el mensaje: exportar
+genera un archivo salida.txt donde están guardadas las conversaciones
+
+== Próximos pasos
+Validar usuarios
+Responder con comandos de ayuda
+... no se que más
+
+== Contacto
+github.com/malev
+turasdeturas.com.ar
+lugtucuman.org.ar
