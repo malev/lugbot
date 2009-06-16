@@ -20,7 +20,7 @@ configure do |c|
 end
 
 on :connect do
-  join "#tucumanos"
+  join "#ruby-lang"
 end
 
 on :channel, // do
