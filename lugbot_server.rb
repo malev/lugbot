@@ -20,7 +20,7 @@ configure do |c|
 end
 
 on :connect do
-  join "#lugtucuman"
+  join "#tucumanos"
 end
 
 on :channel, // do
