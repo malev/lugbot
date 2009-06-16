@@ -1,3 +1,5 @@
+Dir.chdir($directorio)
+
 require 'rubygems'
 require 'parseconfig'
 require 'logger'
@@ -12,7 +14,9 @@ configure do |c|
   c.nick    = myconfig.get_value('nick')
   c.server  = myconfig.get_value('server')
   c.port    = myconfig.get_value('port').to_i
-  c.verbose = true
+  c.verbose = false
+  c.environment = :test
+  
 end
 
 on :connect do

@@ -1,7 +1,8 @@
-  # this is myserver_control.rb
+# this is myserver_control.rb
 
-  require 'rubygems'        # if you use RubyGems
-  require 'daemons'
+require 'rubygems'        # if you use RubyGems
+require 'daemons'
 
-  Daemons.run('lugbot_server.rb')
-
+puts "Iniciando..."
+$directorio = Dir.pwd
+Daemons.run('lugbot_server.rb')
