@@ -1,4 +1,34 @@
 = LugBot
+IRC BOT for the Tucumán LUG channel http://lugtucuman.org.ar
+FreeSoftware Users Group (ex Linux Users Groups)
+
+== Instalation
+git clone git@github.com:malev/lugbot.git
+
+=== Gems to work
+sudo gem install daemons parseconfig logger bcrypt dm-core dm-validations ftools datamapper
+
+== Working
+ruby lugbot.rb start
+ruby lugbot.rb stop
+ruby lugbot.rb restart
+You can ran ruby lugbog.rb run if you need to debug
+
+== Exportar conversaciones
+Send a prived message with the word: exportar
+It will generate a file named "salida.txt" with all the chat.
+
+== ToDo
+Validate users
+response commands
+... write one yourself
+
+== Contact
+github.com/malev
+blog.malev.com.ar
+lugtucuman.org.ar
+
+= Español
 Bot IRC para el canal de IRC del lug Tucumán: http://lugtucuman.org.ar
 Grupo de usuarios de Software Libre de Tucumán - Argentina
 
